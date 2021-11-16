@@ -1,5 +1,5 @@
 Spaceship mika = new Spaceship();
-Star mo[];
+Star[] mo;
 
 public void setup(){
   size(500,500);
