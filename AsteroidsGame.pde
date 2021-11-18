@@ -1,31 +1,30 @@
-class Spaceship extends Floater  
-{   
-   public Spaceship(){
-     corners = 4;
-     xCorners =  new int[corners];
-     yCorners =  new int[corners];
-     xCorners[0] = -8;
-     yCorners[0] = -8;
-     xCorners[1] = 16;
-     yCorners[1] = 0;
-     xCorners[2] = -8;
-     yCorners[2] = 8;
-     xCorners[3] = -2;
-     yCorners[3] = 0;  
-     myColor = 255;
-     myCenterX = 250;
-     myCenterY = 250;
-     myXspeed = 0;
-     myYspeed = 0;
-     myPointDirection = 0;
-   }
-  public void hyperspace(){
-    myCenterX = (int)(Math.random()*500);
-    myCenterY = (int)(Math.random()*500);
-    myPointDirection = (Math.random()*361);
+Spaceship mika = new Spaceship();
+Star[] mo = new Star[200];
+
+public void setup(){
+  size(500,500);
+  background(0);
+  for(int i = 0; i < mo.length; i++){
+    mo[i] = new Star();
   }
-  public void setXspeed(double x){
-    myXspeed = x;
-    myYspeed = x;
+}
+public void draw(){
+  background(0);
+  for(int i  = 0; i < mo.length; i++){
+    mo[i].show();
   }
+  if(keyPressed){
+    if(key == 't' || key == 'T'){
+    mika.turn(-10);
+    }
+    if(key == 'a' || key == 'A'){
+      mika.accelerate(0.4);
+    }
+    if(key == 'h' || key == 'H'){
+      mika.hyperspace();
+      mika.setXspeed(0);
+    }
+  }
+  mika.move();
+  mika.show();
 }
