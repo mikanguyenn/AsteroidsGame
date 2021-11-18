@@ -14,13 +14,16 @@ public void draw(){
     mo[i].show();
   }
   if(keyPressed){
-    if(key == 't' || key == 'T'){
-    mika.turn(-10);
+    if(key == 'l'){
+      mika.turn(-10);
     }
-    if(key == 'a' || key == 'A'){
+    if(key == 'r'){
+      mika.turn(10);
+    }
+    if(key == 'a'){
       mika.accelerate(0.4);
     }
-    if(key == 'h' || key == 'H'){
+    if(key == 'h'){
       mika.hyperspace();
       mika.setSpeed(0);
     }
