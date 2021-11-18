@@ -22,7 +22,7 @@ public void draw(){
     }
     if(key == 'h' || key == 'H'){
       mika.hyperspace();
-      mika.setXspeed(0);
+      mika.setSpeed(0);
     }
   }
   mika.move();
