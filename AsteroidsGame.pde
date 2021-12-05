@@ -1,5 +1,7 @@
 Spaceship mika = new Spaceship();
 Star[] mo = new Star[200];
+ArrayList <Asteroid> a = new ArrayList <Asteroid>();
+int b = 10; 
 
 public void setup(){
   size(500,500);
@@ -7,11 +9,18 @@ public void setup(){
   for(int i = 0; i < mo.length; i++){
     mo[i] = new Star();
   }
+  for(int i = 0; i < b; i++){
+    a.add(new Asteroid());
+  }
 }
 public void draw(){
   background(0);
   for(int i  = 0; i < mo.length; i++){
     mo[i].show();
+  }
+  for(int i = 0; i < a.size(); i++){
+    a.get(i).move();
+    a.get(i).show();
   }
   if(keyPressed){
     if(key == 'l'){
