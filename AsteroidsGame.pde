@@ -21,6 +21,9 @@ public void draw(){
   for(int i = 0; i < a.size(); i++){
     a.get(i).move();
     a.get(i).show();
+    float d = dist((float)mika.getX(),(float)mika.getY(),(float)a.get(i).getX(),(float)a.get(i).getY());
+    if(d < 20)
+      a.remove(i);
   }
   if(keyPressed){
     if(key == 'l'){
